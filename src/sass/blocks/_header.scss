@@ -1,0 +1,50 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(16, 16, 29, .9);
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+    &__hamburger {
+        display: none;
+    }
+    &__logo {
+        width: 247px;
+        color: #FFF;
+        font-family: 'Raleway';
+        font-size: 28px;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-decoration: none;
+        &_blue {
+            color: $main-color;
+        }
+    }
+    .navbar {
+        &__list {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__item {
+            color: #fff;
+            text-align: right;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding-left: 60px;
+            &:hover {
+                color: $main-color;
+                text-decoration: none;
+            }
+            &.active {
+                color: $main-color;
+            }
+        }
+    }
+}

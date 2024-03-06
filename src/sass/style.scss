@@ -1,0 +1,29 @@
+@import 'fonts/fonts';
+
+@import 'base/variables';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    ul li {
+        list-style-type: none;
+    }
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+
+@import 'common/btn';
+
+@import 'blocks/header';
+@import 'blocks/promo';
+@import 'blocks/order';
+@import 'blocks/footer';
+
+
+@import 'blocks/media';
