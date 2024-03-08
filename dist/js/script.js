@@ -2,9 +2,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // navbar
 
-    const navbarItem = document.getElementsByClassName("navbar__item");
+    const navbarItem = document.querySelectorAll(".navbar__item");
     const toggleNavbarClass = function() {
-        document.querySelectorAll('.navbar__item').forEach((item, i) => {
+        navbarItem.forEach((item, i) => {
             if (item !== this) {
                 item.classList.remove("active");
             }
@@ -17,59 +17,73 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // бургер
 
-    const menu = document.querySelector('.header__menu'),
-    menuItem = document.querySelectorAll('.header__menu-item'),
-    hamburger = document.querySelector('.header__hamburger');
+    const navbar = document.querySelector('.navbar__list'),
+          burger = document.querySelector('.header__burger');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('header__hamburger_active');
-        menu.classList.toggle('header__menu_active');
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('header__burger_active');
+        navbar.classList.toggle('navbar__list_active');
     });
 
-    menuItem.forEach(item => {
+    navbarItem.forEach(item => {
         item.addEventListener('click', () => {
-            hamburger.classList.toggle('header__hamburger_active');
-            menu.classList.toggle('header__menu_active');
+            burger.classList.toggle('header__burger_active');
+            navbar.classList.toggle('navbar__list_active');
         });
     });
 
-    // //select
 
+
+
+    //select
+
+    // Добавим обработчик события клика на документ, чтобы при клике вне списка, он закрывался
     document.addEventListener("click", function(e) {
-        const selectContainer = e.target.closest('.select');
-        if (!selectContainer) return;
-      
-        const selectOptions = selectContainer.querySelector('.select__options');
-        const selectStyled = selectContainer.querySelector('.select__styled');
-      
-        if (selectOptions.style.display === 'block') {
-          selectOptions.style.display = 'none';
-          selectStyled.classList.remove('open');
-        } else {
-          selectOptions.style.display = 'block';
-          selectStyled.classList.add('open');
-        }
-      });
-      
-      document.querySelectorAll('.select__option').forEach(option => {
-        option.addEventListener('click', function() {
-          const select = this.closest('.select').querySelector('select');
-          select.value = this.getAttribute('data-value');
-          this.closest('.select__options').style.display = 'none';
-      
-          // Удаляем класс active из всех элементов списка
-          this.closest('.select').querySelectorAll('.select__option').forEach(option => {
-            option.classList.remove('active');
-          });
-      
-          // Добавляем класс active к выбранному элементу
-          this.classList.add('active');
-      
-          const selectStyled = this.closest('.select').querySelector('.select__styled');
-          selectStyled.innerText = this.innerText;
-          selectStyled.classList.remove('open');
-        });
-      });
+		const selectContainers = document.querySelectorAll('.select');
+		selectContainers.forEach(selectContainer => {
+			const selectOptions = selectContainer.querySelector('.select__options');
+			const selectStyled = selectContainer.querySelector('.select__styled');
+			if (!selectContainer.contains(e.target)) {
+			selectOptions.style.display = 'none';
+			selectStyled.classList.remove('open');
+			} else {
+			if (e.target.classList.contains('select__styled')) {
+				if (selectOptions.style.display === 'block') {
+				selectOptions.style.display = 'none';
+				selectStyled.classList.remove('open');
+				} else {
+				selectOptions.style.display = 'block';
+				selectStyled.classList.add('open');
+				}
+			}
+			}
+		});
+    });
+
+    // Добавим обработчик события клика на опции списка
+    document.querySelectorAll('.select__option').forEach(option => {
+		option.addEventListener('click', function() {
+			const selectContainer = this.closest('.select');
+			const select = selectContainer.querySelector('select');
+			select.value = this.getAttribute('data-value');
+			const selectOptions = selectContainer.querySelector('.select__options');
+
+			// Удаляем класс active из всех элементов списка
+			selectOptions.querySelectorAll('.select__option').forEach(option => {
+			option.classList.remove('active');
+			});
+
+			// Добавляем класс active к выбранному элементу
+			this.classList.add('active');
+
+			const selectStyled = selectContainer.querySelector('.select__styled');
+			selectStyled.innerText = this.innerText;
+			selectOptions.style.display = 'none';
+			selectStyled.classList.remove('open');
+		});
+    });
+
+
 
     // ползунок
 

@@ -1,15 +1,17 @@
-.title  {
-    font-family: 'ProximaNova';
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 36px;
-    color: $text-color;
-    &_fz42 {
-        font-size: 42px;
-        line-height: 50px;
+.title {
+    color: $main-color;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    &_white {
+        color: #FFF;
     }
-    &_fz20 {
-        font-size: 20px;
-        line-height: 20px;
+    &_black {
+        color: #000;
+    }
+    &_fz48fw700 {
+        font-size: 48px;
+        font-weight: 700;
     }
 }

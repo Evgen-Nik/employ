@@ -22,7 +22,19 @@ gulp.task("styles", function () {
 		.src("src/sass/**/*.+(scss|sass)")
 		.pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
 		.pipe(rename({ suffix: ".min", prefix: "" }))
-		.pipe(autoprefixer())
+		.pipe(autoprefixer({
+			overrideBrowserslist: ['last 8 versions'],
+			// browsers: [
+			// 	'Android >= 4',
+			// 	'Chrome >= 20',
+			// 	'Firefox >= 24',
+			// 	'Explorer >= 11',
+			// 	'iOS >= 6',
+			// 	'Opera >= 12',
+			// 	'Safari >= 6',
+			// 	'Edge >= 12'
+			// ],
+		}))
 		.pipe(cleanCSS({ compatibility: "ie8" }))
 		.pipe(gulp.dest("dist/css"))
 		.pipe(browserSync.stream());

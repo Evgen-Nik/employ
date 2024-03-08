@@ -2,18 +2,20 @@
     .container {
         max-width: 960px;
     }
+    .title {
+        // font-size: 32px;
+        &_fz48fw700 {
+            font-size: 42px;
+        }
+    }
     .header {
-        &__wrapper {
+        &__wrapper { 
             height: 80px;
         }
     }
     .promo {
-        height: 700px;
         padding-top: 180px;
-        &__title {
-            width: 680px;
-            font-size: 40px;
-        }
+        padding-bottom: 180px;
         &__subtitle {
             margin-top: 60px;
         }
@@ -21,26 +23,21 @@
     .order {
         padding: 80px 0 120px 0;
         min-height: 850px;
-        &__scheme {
-            &-item {
-                width: 192px;
-                &:before {
-                    font-size: 16px;
-                    content: "●●●●●●●";
-                    letter-spacing: 34px;
-                }
+        .scheme {
+            &:before {
+                left: 160px;
+                content: "●●●●●●●●●●●●●●●●●●●●●●●●";
+                letter-spacing: 19px;
             }
-            &-descr {
-                width: 160px;
+            &__item {
+                width: 192px;
             }
         }
-        &__form {
+        .form {
             grid-template-columns: repeat(3, 300px);
         }
-    }
-    .btn {
-        &_submit {
-            width: 300px;
+        &__btn {
+            min-width: 300px;
         }
     }
     .footer {
@@ -48,7 +45,7 @@
             padding: 0 10px;
             grid-template-columns: 200px 380px 200px;
         }
-        &__contacts {
+        .contacts {
             grid-template-columns: repeat(auto-fit, 155px);
         }
     }
@@ -58,101 +55,103 @@
     .container {
         max-width: 720px;
     }
+    .title {
+        font-size: 30px;
+        &_fz48fw700 {
+            font-size: 34px;
+        }
+    }
+    .btn {
+        height: 37px;
+        min-width: 163px;
+        padding: 11px 40px;
+    }
     .header {
-        &__menu {
-            width: 350px;
+        &__logo {
+            font-size: 24px;
+        }
+        .navbar {
+            &__item {
+                padding-left: 30px;
+            }
         }
     }
     .promo {
-        height: 620px;
-        padding-top: 160px;
+        padding-top: 150px;
+        padding-bottom: 150px;
         &__title {
-            width: 580px;
-            font-size: 34px;
+            width: 75%;
         }
         &__subtitle {
             font-size: 18px;
         }
-        &__list {
-            &-item {
-                font-size: 16px;
-            }
+        &__item {
+            font-size: 16px;
         }
         &__btns {
             margin-top: 70px;
-            width: 360px;
-        }
-    }
-    .btn {
-        width: 160px;
-        height: 40px;
-        padding: 11px 10px;
-        &_submit {
-            width: 300px;
         }
     }
     .order {
-        &__title {
-            font-size: 32px;
-        }
         &__subtitle {
             font-size: 16px;
         }
-        &__scheme {
-            &-item {
-                width: 144px;
-                &:before {
-                    height: 70px;
-                    font-size: 16px;
-                    content: "●●●●●●●";
-                    letter-spacing: 26px;
-                }
+        .scheme {
+            &:before {
+                top: 25px;
+                left: 116px;
+                content: "●●●●●●●●●●●●●●●●●●●●●";
+                letter-spacing: 15.5px;
             }
-            &-icon {
+            &__item {
+                width: 144px;
+            }
+            &__icon {
                 width: 70px;
                 height: 70px;
-                img {
-                    width: 70%;
-                }
+                border: 3px solid #286690;
             }
-            &-descr {
-                width: 130px;
+            &__img {
+                width: 70%;
+            }
+            &__descr {
                 font-size: 12px;
             }
         }
-        &__form {
-            grid-template-columns: repeat(auto-fit, 345px);
-            grid-template-rows: repeat(3, 40px);
-            grid-auto-rows: 40px;
+        .form {
+            grid-template: repeat(3, minmax(40px, auto)) / repeat(2, 345px);
+            grid-auto-rows: minmax(40px, auto);
+            .input {
+                &__email, &__name {
+                    font-size: 16px;
+                    padding: 9px;
+                }
+            }
+            .select {
+                &__styled {
+                    font-size: 16px;
+                    padding: 9px 50px 9px 9px;
+                }
+            }
+            .rating {
+                &__title, &__counter {
+                    font-size: 16px;
+                }
+            }
+            .file {
+                padding: 8px;
+                max-height: 40px;
+                &__name {
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+                &__img {
+                    width: 16px;
+                }
+            }
         }
-        &__input {
-            &-name {
-                order: 1;
-            }
-            &-email {
-                order: 2;
-            }
-            input {
-                padding-top: 8px;
-                font-size: 16px;
-            }
-        }
-        &__select {
-            order: 3;
-            select {
-                padding-top: 8px;
-                font-size: 16px;
-            }
-        }
-        &__rating {
-            order: 5;
-        }
-        &__file {
-            order: 4;
-            padding: 8px;
-            label {
-                font-size: 14px;
-            }
+        &__btn {
+            min-width: 300px;
         }
     }
     .footer {
@@ -162,11 +161,11 @@
             grid-template-columns: repeat(auto-fit, 400px);
             justify-content: center;
         }
-        &__rights {
+        .rights {
             text-align: center;
             order: 3;
         }
-        &__payment {
+        .payment {
             &:after{
                 display: none;
             }
@@ -174,9 +173,9 @@
                 display: none;
             }
         }
-        &__contacts {
+        .contacts {
             justify-content: space-around;
-            &-link {
+            &__link {
                 justify-content: center;
             }
         }
@@ -187,36 +186,41 @@
     .container {
         max-width: 540px;
     }
-    .header {
-        &__logo {
-            font-size: 24px;
+    .title {
+        font-size: 26px;
+        &_fz48fw700 {
+            font-size: 30px;
         }
-        &__menu {
-            position: fixed;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100vh;
-            padding: 20px 15px;
-            background-color: rgba(0,0,0, .95);
-            transition: 0.6s all;
-            &_active{
-                left: 0;
+    }
+    .header {
+        .navbar {
+            &__list {
+                position: fixed;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100vh;
+                padding: 20px 15px;
+                background-color: rgba(0,0,0, .95);
+                transition: 0.6s all;
+                &_active{
+                    left: 0;
+                }
             }  
-            &_item {
+            &__item {
                 padding-right: 0;
                 border: none;
                 margin: 10px 0;
             }
-            &_link {
+            &__link {
                 font-size: 20px;
             }
         }
-        &__hamburger {
+        &__burger {
 		display: block;
 		position: absolute;
 		right: 20px;
@@ -249,111 +253,65 @@
         }
     }
     .promo {
-        height: 520px;
-        padding-top: 150px;
+        padding-bottom: 100px;
         &__title {
-            width: 450px;
-            font-size: 28px;
+            width: 80%;
         }
         &__subtitle {
-            margin-top: 50px;
-            font-size: 14px;
+            margin-top: 40px;
+            font-size: 16px;
+            width: 80%;
         }
-        &__list {
-            &-item {
-                font-size: 12px;
-            }
+        &__item {
+            font-size: 14px;
+            width: 80%;
         }
         &__btns {
-            margin-top: 50px;
-            width: 320px;
-        }
-    }
-    .btn {
-        width: 140px;
-        height: 35px;
-        padding: 9px 10px;
-        &_submit {
-            width: 250px;
+            gap: 15px;
+            margin-top: 40px;
         }
     }
     .order {
-        &__title {
-            font-size: 26px;
-        }
         &__subtitle {
             font-size: 14px;
         }
-        &__scheme {
+        .scheme {
             margin-top: 50px;
             flex-direction: column;
             width: 100%;
-            
-            &-item {
+            &:before {
+                display: none;
+            }
+            &__item {
                 flex-direction: row;
                 margin-top: 10px;
                 width: 100%;
                 justify-content: center;
-                gap: 10px;
+                gap: 20px;
                 &:before {
                     display: none;
                 }
             }
-            &-icon {
+            &__icon {
                 width: 60px;
                 height: 60px;
-                img {
-                    width: 60%;
-                }
             }
-            &-descr {
+            &__img {
+                width: 60%;
+            }
+            &__descr {
                 margin: 0;
                 width: 300px;
-                font-size: 12px;
+                font-size: 14px;
                 text-align: start;
             }
         }
-        &__form {
-            grid-template-columns: repeat(auto-fit, 260px);
+        .form {
+            grid-template-columns: repeat(2, 260px);
             gap: 20px;
         }
-        &__input {
-            input {
-                font-size: 14px;
-            }
-        }
-        &__select {
-            select {
-                font-size: 14px;
-            }
-        }
-        &__rating {
-            &-title {
-                font-size: 14px;
-            }
-            &-counter {
-                font-size: 14px;
-            }
-            &-slider {
-                .slider {
-                    height: 4px;
-                    border-radius: 2px;
-                    &::-webkit-slider-thumb {
-                        width: 20px;
-                        height: 20px;
-                    }
-                    &::-moz-range-thumb {
-                        width: 20px;
-                        height: 20px;
-                    }
-                }
-            }
-        }
-        &__file {
-            padding: 8px;
-            label {
-                font-size: 14px;
-            }
+        &__btn {
+            min-width: 260px;
         }
     }
 }
@@ -363,47 +321,59 @@
         max-width: 100%;
         padding: 0 10px;
     }
+    .title {
+        font-size: 24px;
+        &_fz48fw700 {
+            font-size: 26px;
+        }
+    }
+    .btn {
+        height: 33px;
+        min-width: 130px;
+        padding: 9px 20px;
+        font-size: 12px;
+    }
     .header {
+        &__wrapper {
+            height: 65px;
+        }
         &__logo {
             font-size: 20px;
         }
-        &__menu {
-            width: 80%;
+        .navbar {
+            &__list {
+                width: 80%;
+            }
         }
     }
     .promo {
-        &__title {
-            width: 285px;
-            font-size: 24px;
-        }
-        &__btns {
-            width: 285px;
-        }
+        padding-top: 100px;
+        padding-bottom: 80px;
+        background-position: 58% 50%;
     }
     .order {
-        &__title {
-            font-size: 24px;
-        }
-        &__scheme {
-            &-descr {
+        .scheme {
+            &__descr {
                 width: 200px;
             }
         }
-        &__form {
-            grid-template-columns: repeat(auto-fit, 285px);
+        .form {
+            grid-template-columns: 285px;
             justify-content: center;
-        }
-        &__rating {
-            grid-column: 1;
-            grid-template-columns: auto 40px;
-            &-title {
-                font-size: 13px;
+            .rating {
+                grid-column: span 1;
+                &__title, &__counter {
+                    font-size: 14px;
+                }
             }
-        }
-        &__file {
-            order: 5;
-            label {
-                font-size: 12px;
+            .file {
+                &__name {
+                    font-size: 13px;
+                    line-height: 13px;
+                }
+                &__img {
+                    width: 16px;
+                }
             }
         }
     }
@@ -415,25 +385,25 @@
             grid-template-columns: repeat(auto-fit, 100%);
             justify-content: center;
         }
-        &__rights {
+        .rights {
             display: block;
             margin: 0 auto;
             width: 180px;
             text-align: center;
             order: 3;
         }
-        &__payment {
+        .payment {
             justify-content: space-around;
-            &-item {
+            &__item {
                 grid-template: repeat(2, 20px) / auto;
                 row-gap: 5px;
                 justify-items: center;
                 
             }
         }
-        &__contacts {
+        .order {
             justify-content: space-around;
-            &-link {
+            &__link {
                 justify-content: center;
             }
         }

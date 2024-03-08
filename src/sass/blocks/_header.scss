@@ -10,7 +10,7 @@
         align-items: center;
         height: 100px;
     }
-    &__hamburger {
+    &__burger {
         display: none;
     }
     &__logo {
@@ -29,6 +29,7 @@
         &__list {
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
         &__item {
             color: #fff;
