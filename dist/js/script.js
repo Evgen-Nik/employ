@@ -4,12 +4,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const navbarItem = document.querySelectorAll(".navbar__item");
     const toggleNavbarClass = function() {
-        navbarItem.forEach((item, i) => {
-            if (item !== this) {
-                item.classList.remove("active");
-            }
+        // navbarItem.forEach((item, i) => {
+        //     if (item !== this) {
+        //         item.classList.remove("active");
+        //     }
+        // });
+        // this.classList.contains("active") ? this.classList.remove("active") : this.classList.add("active")
+
+        navbarItem.forEach((item) => {
+            item.classList.remove("active");
         });
-        this.classList.contains("active") ? this.classList.remove("active") : this.classList.add("active")
+        this.classList.add("active");
     }
     Array.from(navbarItem).forEach(function(element) {
         element.addEventListener('click', toggleNavbarClass);
@@ -21,14 +26,14 @@ window.addEventListener('DOMContentLoaded', () => {
           burger = document.querySelector('.header__burger');
 
     burger.addEventListener('click', () => {
-        burger.classList.toggle('header__burger_active');
-        navbar.classList.toggle('navbar__list_active');
+        burger.classList.toggle('active');
+        navbar.classList.toggle('active');
     });
 
     navbarItem.forEach(item => {
         item.addEventListener('click', () => {
-            burger.classList.toggle('header__burger_active');
-            navbar.classList.toggle('navbar__list_active');
+            burger.classList.toggle('active');
+            navbar.classList.toggle('active');
         });
     });
 

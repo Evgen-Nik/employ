@@ -207,7 +207,7 @@
                 padding: 20px 15px;
                 background-color: rgba(0,0,0, .95);
                 transition: 0.6s all;
-                &_active{
+                &.active{
                     left: 0;
                 }
             }  
@@ -228,6 +228,7 @@
 		transform: translateY(-50%);
 		width: 27px;
 		height: 12px;
+        cursor: pointer;
             span {
                 display: block;
                 height: 2px;
@@ -236,7 +237,7 @@
                 margin-bottom: 3px;
                 transition: 0.5s all;
             }
-            &_active {
+            &.active {
                 span {
                     margin-bottom: -2px;
                     &:nth-child(1) {

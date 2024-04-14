@@ -42,22 +42,6 @@
             justify-content: flex-start;
             align-items: center; 
             overflow: hidden;
-            * {
-                position: relative;
-                z-index: 1;
-            }
-            &:first-child {
-                &:before {
-                    left: 50%;
-                    width: 50%;
-                }
-            }
-            &:last-child{
-                &:before {
-                    right: 50%;
-                    left:auto;
-                }
-            }
         }
         &__icon {
             display: flex;
